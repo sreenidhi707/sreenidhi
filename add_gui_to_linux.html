@@ -6,7 +6,7 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 2em; }
     h1 { color: #333; }
-    pre { background: #f4f4f4; padding: 1em; border-radius: 4px; }
+    pre { background: #f4f4f4; padding: 0.5em; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -14,45 +14,65 @@
   
   <h2>Install VNC Server:</h2>
   <pre>
-    <code>
-      sudo apt update
-      sudo apt install tightvncserver
-    </code>
+<code>
+sudo apt update
+sudo apt install tightvncserver
+</code>
   </pre>
 
   <h2>Install a Desktop Envirnoment:</h2>
   <pre>
-    <code>
-      sudo apt install xfce4 xfce4-goodies
-    </code>
+<code>
+sudo apt install xfce4 xfce4-goodies
+</code>
   </pre>
   
   <h2>Configure VNC Server</h2>
   <p>Start VNC server for the first time to set a password:</p>
-  <pre><code>vncserver :1</code></pre>
+  <pre>
+<code>
+vncserver :1
+</code>
+  </pre>
   
   <p>You'll be prompted to set a VNC password (required) and a view-only password (optional).</p>
   
   <p>Kill the VNC server to configure it:</p>
-  <pre><code>vncserver -kill :1</code></pre>
+  <pre>
+<code>
+vncserver -kill :1
+</code>
+  </pre>
   
   <p>Edit the VNC startup script:</p>
-  <pre><code>vi ~/.vnc/xstartup</code></pre>
+  <pre>
+<code>
+vi ~/.vnc/xstartup
+</code>
+  </pre>
 
   <p>Replace the contents with:</p>
   <pre>
-    <code>
-      #!/bin/bash
-      xrdb $HOME/.Xresources
-      startxfce4 &
-    </code>
+<code>
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4 &
+</code>
   </pre>
   
   <p>Make it executable:</p>
-  <pre><code>chmod +x ~/.vnc/xstartup</code></pre>
+  <pre>
+<code>
+chmod +x ~/.vnc/xstartup
+</code>
+  </pre>
   
   <h2>Start VNC Server</h2>
-  <pre><code>vncserver :1 -geometry 1920x1080 -depth 24</code></pre>
+  <pre>
+<code>
+vncserver :1 -geometry 1920x1080 -depth 24
+</code>
+  </pre>
   
   <p><a href="index.html">Back to home</a></p>
 </body>
