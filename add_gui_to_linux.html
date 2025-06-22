@@ -19,7 +19,7 @@ sudo apt install tightvncserver</code></pre>
 
 <h2>Install a Desktop Envirnoment:</h2>
 <pre><code>sudo apt install xfce4 xfce4-goodies</code></pre>
-  
+
 <h2>Configure VNC Server</h2>
 <p>Start VNC server for the first time to set a password:</p>
 <pre><code>vncserver :1</code></pre>
@@ -41,7 +41,21 @@ startxfce4 &</code></pre>
   
 <h2>Start VNC Server</h2>
 <pre><code>vncserver :1 -geometry 1920x1080 -depth 24</code></pre>
-  
+
+<h2>To make copy/paste work:</h2>
+<pre><code>sudo apt install autocutsel xclip</code></pre>
+
+<p>Add this line: <code>autocutsel -fork</code> to <code>~/.vnc/xstartup</code>. The final contents of <code>~/.vnc/xstartup</code> will look like this:</p>
+<pre><code>#!/bin/sh
+xrdb "$HOME/.Xresources"
+startxfce4 &
+
+# Allow copy and paste to work
+autocutsel -fork
+# Fix to make GNOME work
+export XKL_XMODMAP_DISABLE=1
+/etc/X11/Xsession</code></pre>
+
 <p><a href="index.html">Back to home</a></p>
 </body>
 </html>
