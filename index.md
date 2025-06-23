@@ -1,5 +1,11 @@
+---
+layout: default
+title: Home
+---
+
 # Welcome to sreenidhi.github.io
 
 This site hosts useful tips, notes, and resources.
 
-Browse [useful/gui_in_linux.md](useful/gui_in_linux.md) for GUI setup instructions on Linux.
+* [Add GUI to Linux](add_gui_to_linux.md)
+* [GUI setup instructions](useful/gui_in_linux.md)
